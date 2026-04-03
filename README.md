@@ -1,18 +1,22 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# AI Trip Planner
 
-First, run the development server:
+## Description
+An AI-powered web application that generates personalized travel itineraries based on user inputs like destination, budget, and duration.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
+- User input form (destination, budget, days)
+- AI-generated itinerary (coming soon)
+- Clean and responsive UI
+
+## Tech Stack
+- Frontend: Next.js (React)
+- Backend: Node.js (planned)
+- AI: OpenAI API (planned)
+
+## Status
+🚧 In Progress
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
