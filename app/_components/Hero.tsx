@@ -1,7 +1,20 @@
+"use client";
 import React from 'react'
 import { Send, Globe, Plane, Landmark, Tent, ArrowDown } from 'lucide-react'
 import { HeroVideoDialog } from '@/components/ui/hero-video-dialog'
+import { useRouter } from 'next/navigation'
+import { useUser } from '@clerk/nextjs'
+
 export default function Hero() {
+    const { user } = useUser();
+    const router = useRouter();
+
+    const onSend = () => {
+        if (!user) {
+            router.push('/sign-in');
+            return;
+        }
+    }
     return (
         <div className='mt-16 sm:mt-24 w-full flex flex-col items-center justify-center px-4'>
             {/* Content */}
@@ -20,7 +33,7 @@ export default function Hero() {
                             placeholder='Create a trip for Parise from New york'
                             className='w-full h-24 bg-transparent border-none outline-none resize-none text-base text-gray-800 placeholder-gray-400'
                         />
-                        <button className='absolute bottom-4 right-4 bg-[#f56551] hover:bg-red-500 text-white p-2.5 rounded-lg transition-colors'>
+                        <button onClick={onSend} className='absolute bottom-4 right-4 bg-[#f56551] hover:bg-red-500 text-white p-2.5 rounded-lg transition-colors'>
                             <Send size={18} />
                         </button>
                     </div>

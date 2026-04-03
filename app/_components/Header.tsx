@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { SignInButton } from '@clerk/nextjs'
 
 const menuOptions = [
   { name: 'Home', path: '/' },
@@ -31,11 +32,17 @@ export default function Header() {
       </nav>
 
       {/* Action Section */}
+
       <div className="flex w-1/3 items-center justify-end">
-        <button className="rounded-lg bg-[#f56551] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-red-500">
-          Get Started
-        </button>
+        <SignInButton>
+          <button className="rounded-lg bg-[#f56551] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-red-500">
+            Get Started
+          </button>
+        </SignInButton>
       </div>
+
+
+
     </header>
   )
 }
