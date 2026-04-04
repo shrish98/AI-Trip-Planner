@@ -5,6 +5,7 @@ import Provider from "./provider";
 
 import Header from "./_components/Header";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ConvexClientProvider } from "./ConvexClientProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,10 +22,12 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={outfit.className}>
-          <Provider>
-            <Header />
-            {children}
-          </Provider>
+          <ConvexClientProvider>
+            <Provider>
+              <Header />
+              {children}
+            </Provider>
+          </ConvexClientProvider>
         </body>
       </html>
     </ClerkProvider>
