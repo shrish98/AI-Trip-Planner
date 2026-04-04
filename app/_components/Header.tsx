@@ -13,7 +13,7 @@ const menuOptions = [
 
 export default function Header() {
   const { user } = useUser();
-  
+
   return (
     <header className="flex w-full items-center justify-between px-6 py-4 shadow-sm bg-white">
       {/* Logo Section */}
@@ -45,10 +45,8 @@ export default function Header() {
           </SignInButton>
         ) : (
           <div className="flex items-center gap-3">
-            <Link href={'/create-trip'}>
-              <Button>
-                Create new trip
-              </Button>
+            <Link href={'/create-new-trip'}>
+              <Button>  Create new trip </Button>
             </Link>
             {/* Added UserButton so users can log out / manage account */}
             <UserButton />

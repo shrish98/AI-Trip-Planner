@@ -1,9 +1,15 @@
 import React from "react";
+import ChatBox from "./_components/ChatBox";
 
 export default function CreateNewTrip() {
     return (
-        <div>
-            <h1>Create New Trip</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 p-10">
+            <div>
+                <ChatBox />
+            </div>
+            <div>
+                Map and trip Plan to display
+            </div>
         </div>
     );
 }

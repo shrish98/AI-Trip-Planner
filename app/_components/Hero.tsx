@@ -14,6 +14,7 @@ export default function Hero() {
             router.push('/sign-in');
             return;
         }
+        router.push('/create-new-trip')
     }
     return (
         <div className='mt-16 sm:mt-24 w-full flex flex-col items-center justify-center px-4'>
