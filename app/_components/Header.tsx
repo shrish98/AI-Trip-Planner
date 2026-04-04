@@ -1,7 +1,9 @@
+"use client";
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { SignInButton } from '@clerk/nextjs'
+import { SignInButton, UserButton, useUser } from '@clerk/nextjs'
+import { Button } from '@/components/ui/button'
 
 const menuOptions = [
   { name: 'Home', path: '/' },
@@ -10,6 +12,8 @@ const menuOptions = [
 ]
 
 export default function Header() {
+  const { user } = useUser();
+  
   return (
     <header className="flex w-full items-center justify-between px-6 py-4 shadow-sm bg-white">
       {/* Logo Section */}
@@ -32,16 +36,25 @@ export default function Header() {
       </nav>
 
       {/* Action Section */}
-
-      <div className="flex w-1/3 items-center justify-end">
-        <SignInButton>
-          <button className="rounded-lg bg-[#f56551] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-red-500">
-            Get Started
-          </button>
-        </SignInButton>
+      <div className="flex w-1/3 items-center justify-end gap-3">
+        {!user ? (
+          <SignInButton mode="modal">
+            <button className="rounded-lg bg-[#f56551] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-red-500">
+              Get Started
+            </button>
+          </SignInButton>
+        ) : (
+          <div className="flex items-center gap-3">
+            <Link href={'/create-trip'}>
+              <Button>
+                Create new trip
+              </Button>
+            </Link>
+            {/* Added UserButton so users can log out / manage account */}
+            <UserButton />
+          </div>
+        )}
       </div>
-
-
 
     </header>
   )
