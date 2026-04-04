@@ -9,8 +9,11 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^3.0.50",
+    "@arcjet/next": "^1.3.1",
     "@clerk/nextjs": "^7.0.8",
     "@tabler/icons-react": "^3.41.1",
+    "ai": "^6.0.146",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "convex": "^1.34.1",
